@@ -1,0 +1,133 @@
+body {
+	font-family:  Helvetica, Arial, sans-serif;
+	color: rgb(30,38,51); /* Dark blue */
+	color: rgba(30,38,51,1);
+	font-size: 80%;
+	font-weight: normal;
+	background: #fdfdfd;
+	max-width: 400px;
+	width: 90%;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+
+/* links */
+
+a:link, a:visited {
+	text-decoration: none;
+	font-weight: bold;
+	outline: none;
+	color: ;
+	-webkit-transition: color .2s linear;
+}
+
+
+h1 {
+	font-size: 3.5em;
+	width: 90%;
+	position: relative;
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding:4px;
+	border: 4px solid rgb(30,38,51);
+	outline: 4px solid rgb(82,182,214);
+	box-shadow: 0 0 0 8px rgb(202,0,0),
+				0 0 0 12px rgb(82,182,214),
+				0 0 0 16px rgb(30,38,51);
+}
+
+
+ul {
+	width: 100%;
+}
+
+#row {
+	display: block;
+	height: 5em;
+	margin-bottom: 3em;
+}
+
+#row li {
+	display: inline;
+}
+
+#row li:last-child {
+	float: right;
+}
+
+#name {
+	font-size: 2.2em;
+	line-height: 2.2em;
+}
+
+.switch {
+	border: none;
+	outline: none;
+	width: 5em;
+	height: 2.5em;
+	background: #fff;
+	font-size: 2em;
+	border: .2em solid;
+	
+	-webkit-border-radius: .8em; 
+	-moz-border-radius: .8em; 
+	border-radius: .8em; 
+	-webkit-background-clip: padding-box; 
+	-moz-background-clip: padding; 
+	background-clip: padding-box;
+	
+    -webkit-transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+    -o-transition: all ease 500ms;
+    transition: all ease 500ms;
+	
+}
+
+#on {
+	color: rgb(82,182,214); /* Light blue */
+	color: rgba(82,182,214,1);
+	border-color: rgb(82,182,214);
+	border-color: rgb(82,182,214,1);
+}
+
+#on:hover {
+	background: rgb(82,182,214);
+	color: rgb(255,255,255);
+}
+
+#off {
+	color: rgb(202,0,0); /* Red */
+	color: rgba(202,0,0, 1);
+	border-color: rgb(202,0,0);
+	border-color: rgb(202,0,0,1);
+}
+
+#off:hover {
+	background: rgb(202,0,0);
+	color: rgb(255,255,255);
+}
+
+
+/* misc. 
+--------------------------------------------- */
+
+hr, .hide {
+	display: none;
+}
+
+a img {
+	border: none;
+}
+
+
+/* self-clear floats */
+
+.group:after {
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}

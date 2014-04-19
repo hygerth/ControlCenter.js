@@ -1,0 +1,11 @@
+{
+	"name": "controlcenter",
+	"private": true,
+	"author": "https://github.com/hygerth/",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "latest",
+		"jade": "latest",
+		"socket.io": "latest"
+	}
+}
