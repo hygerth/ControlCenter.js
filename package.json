@@ -1,50 +1,61 @@
 {
-	"name": "controlcenter",
-	"private": true,
-	"author": "https://github.com/hygerth/",
-	"version": "0.0.1",
-	"dependencies": {
-		"express": "latest",
-		"jade": "latest",
-		"socket.io": "latest"
-	},
-	"devDependencies": {
-		"jscs": "latest"
-	},
-	"jscsConfig": {
-		"requireSpaceAfterKeywords": [
-			"if",
-			"else",
-			"for",
-			"while",
-			"do",
-			"switch",
-			"return",
-			"try",
-			"catch"
-		],
-		"requireSpaceBeforeBlockStatements": true,
-		"requireParenthesesAroundIIFE": true,
-		"requireSpacesInFunctionExpression": {
-			"beforeOpeningCurlyBrace": true
-		},
-		"disallowMultipleVarDecl": true,
-		"disallowEmptyBlocks": true,
-		"disallowSpacesInsideArrayBrackets": true,
-		"disallowSpacesInsideParentheses": true,
-		"disallowQuotedKeysInObjects": true,
-		"disallowDanglingUnderscores": true,
-		"disallowSpaceAfterObjectKeys": true,
-		"requireCommaBeforeLineBreak": true,
-		"disallowImplicitTypeConversion": ["numeric", "boolean", "binary", "string"],
-		"disallowMultipleLineStrings": true,
-		"disallowMultipleLineBreaks": true,
-		"validateLineBreaks": "LF",
-		"disallowTrailingWhitespace": true,
-		"disallowTrailingComma": true,
-		"disallowKeywordsOnNewLine": ["else"],
-		"requireLineFeedAtFileEnd": true,
-		"disallowYodaConditions": true,
-		"excludeFiles": ["node_modules/**"]
-	}
+  "name": "controlcenter",
+  "private": true,
+  "author": "https://github.com/hygerth/",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "socket.io": "latest"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-jscs-checker": "^0.6.0",
+    "jscs": "^1.5.6"
+  },
+  "jscsConfig": {
+    "requireSpaceAfterKeywords": [
+      "if",
+      "else",
+      "for",
+      "while",
+      "do",
+      "switch",
+      "return",
+      "try",
+      "catch"
+    ],
+    "requireSpaceBeforeBlockStatements": true,
+    "requireParenthesesAroundIIFE": true,
+    "requireSpacesInFunctionExpression": {
+      "beforeOpeningCurlyBrace": true
+    },
+    "disallowMultipleVarDecl": true,
+    "disallowEmptyBlocks": true,
+    "disallowSpacesInsideArrayBrackets": true,
+    "disallowSpacesInsideParentheses": true,
+    "disallowQuotedKeysInObjects": true,
+    "disallowDanglingUnderscores": true,
+    "disallowSpaceAfterObjectKeys": true,
+    "requireCommaBeforeLineBreak": true,
+    "disallowImplicitTypeConversion": [
+      "numeric",
+      "boolean",
+      "binary",
+      "string"
+    ],
+    "disallowMultipleLineStrings": true,
+    "disallowMultipleLineBreaks": true,
+    "validateLineBreaks": "LF",
+    "disallowTrailingWhitespace": true,
+    "disallowTrailingComma": true,
+    "disallowKeywordsOnNewLine": [
+      "else"
+    ],
+    "requireLineFeedAtFileEnd": true,
+    "disallowYodaConditions": true,
+    "excludeFiles": [
+      "node_modules/**"
+    ]
+  }
 }
