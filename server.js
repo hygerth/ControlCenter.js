@@ -1,15 +1,16 @@
-var express = require('express');
-var jade 	= require('jade');
-var http	= require('http');
-var port 	= process.env.PORT || 7337;
-var app		= express();
-var server	= http.createServer(app);
-var io		= require('socket.io').listen(server);
-var exec 	= require('child_process').exec;
-var devices	= [];
+var express 	= require('express');
+var bodyParser 	= require('body-parser');
+var jade 		= require('jade');
+var http		= require('http');
+var port 		= process.env.PORT || 7337;
+var app			= express();
+var server		= http.createServer(app);
+var io			= require('socket.io').listen(server);
+var exec 		= require('child_process').exec;
+var devices		= [];
 
 //app.use(express.logger('dev'));
-app.use(express.bodyParser());
+app.use(bodyParser());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
@@ -30,9 +31,10 @@ io.sockets.on('connection', function(socket) {
 
 server.listen(port);
 
-app.get('/', function(req, res) {
-	res.render('index.jade');
-});
+app.route('/')
+	.get(function(req, res) {
+		res.render('index.jade');
+	});
 
 //console.log('Starts to listen on port ' + port);
 

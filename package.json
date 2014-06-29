@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "latest",
+	"body-parser": "~1.0.0",
     "jade": "latest",
     "socket.io": "latest"
   },
