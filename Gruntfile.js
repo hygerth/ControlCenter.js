@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-githooks');
 	grunt.loadNpmTasks('grunt-jscs-checker');
 
 	grunt.registerTask('test', ['jscs']);
