@@ -18,7 +18,7 @@
 
 		listAllDevices: function(data) {
 			$('#list').html('');
-			var devices = data.devices;
+			var devices = data.devices || [];
 			for (var i = 0; i < devices.length; i++) {
 				var device = devices[i];
 				var name = document.createElement('li');
