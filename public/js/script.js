@@ -25,7 +25,7 @@
 				name.id = 'name';
 				name.innerHTML = IO.capitalize(device.name);
 
-				var status = document.createElement('li')
+				var status = document.createElement('li');
 				status.innerHTML = '<button id="' + device.status.toLowerCase() + '" class="switch" value="' + device.id + '">' + device.status + '</button>';
 
 				var row = document.createElement('ul');
@@ -46,13 +46,13 @@
 			var data = {
 				id: id,
 				status: status
-			}
+			};
 			IO.socket.emit('toogle', data);
 		},
 
 		capitalize: function(string) {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		}
-	}
+	};
 	IO.init();
 }($));

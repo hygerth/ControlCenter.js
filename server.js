@@ -18,21 +18,21 @@ io.sockets.on('connection', function(socket) {
 	io.sockets.emit('list', {devices: devices});
 	socket.on('toogle', function(data) {
 		var status = 'on';
-		if (data.status == 'on') {
+		if (data.status === 'on') {
 			status = 'off';
 		}
 		console.log(status);
 		exec('tdtool --' + status + ' ' + parseInt(data.id), function(error, stdout, stderr) {});
 		update();
 		io.sockets.emit('list', {devices: devices});
-	})
-})
+	});
+});
 
 server.listen(port);
 
 app.get('/', function(req, res) {
 	res.render('index.jade');
-})
+});
 
 //console.log('Starts to listen on port ' + port);
 
@@ -44,7 +44,7 @@ function update() {
 	exec('tdtool --list', function(error, stdout, stderr) {
 		devices = [];
 		var devicesString = stdout.replace('\r', '').split('\n');
-		for (i in devicesString) {
+		for (var i in devicesString) {
 			var deviceParams = devicesString[i].split('\t');
 			var params = {};
 			if (deviceParams.length >= 3) {

@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 		},
 
 		jshint: {
+			src: ['*.js', 'public/js/*.js'],
 			options: {
 				curly: true,
 				eqeqeq: true,
@@ -29,4 +30,4 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('test', ['jshint', 'jscs']);
 
-}
+};
