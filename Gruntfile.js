@@ -9,14 +9,24 @@ module.exports = function(grunt) {
 			}
 		},
 
+		jshint: {
+			options: {
+				curly: true,
+				eqeqeq: true,
+				sub: true,
+				reporter: require('jshint-stylish')
+			}
+		},
+
 		jscs: {
-			src: "."
+			src: ['*.js', 'public/js/*.js']
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-githooks');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-jscs-checker');
 
-	grunt.registerTask('test', ['jscs']);
+	grunt.registerTask('test', ['jshint', 'jscs']);
 
 }
