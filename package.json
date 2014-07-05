@@ -2,7 +2,7 @@
   "name": "controlcenter",
   "private": true,
   "author": "https://github.com/hygerth/",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "dependencies": {
     "express": "latest",
 	"body-parser": "~1.0.0",

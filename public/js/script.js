@@ -13,41 +13,46 @@
 		},
 
 		connectElements: function() {
-			$(document).on('click', '.switch', IO.sendToogle);
+			$(document).on('click', 'input', IO.sendToogle);
 		},
 
 		listAllDevices: function(data) {
-			$('#list').html('');
+			//$('#list').html('');
 			var devices = data.devices || [];
+			var items = $('.list').children();
 			for (var i = 0; i < devices.length; i++) {
 				var device = devices[i];
-				var name = document.createElement('li');
-				name.id = 'name';
-				name.innerHTML = IO.capitalize(device.name);
-
-				var status = document.createElement('li');
-				status.innerHTML = '<button id="' + device.status.toLowerCase() + '" class="switch" value="' + device.id + '">' + device.status + '</button>';
-
-				var row = document.createElement('ul');
-				row.id = 'row';
-				row.appendChild(name);
-				row.appendChild(status);
-
-				var rowContainer = document.createElement('li');
-				rowContainer.appendChild(row);
-
-				$('#list').append(rowContainer);
+				if (i >= items.length) {
+					var li = document.createElement('li');
+					li.className = 'item group';
+					li.innerHTML = '<p></p><label class="toggle"><input type="checkbox"><div class="track"><div class="handle"></div></div></label>';
+					$('.list').append(li);
+					items = $('.list').children();
+				}
+				var item = items[i];
+				$(item).find('p').text(device.name);
+				$(item).find('label').attr('id', device.id);
+				var status = IO.convertStatus(device.status);
+				$(item).find('input').prop('checked', status[0]);
 			}
 		},
 
 		sendToogle: function() {
-			var id = $(this).val();
-			var status = $(this).attr('id');
+			var id = $(this).parent().attr('id');
+			var status = IO.convertStatus(this.checked);
 			var data = {
 				id: id,
-				status: status
+				status: status[1]
 			};
 			IO.socket.emit('toogle', data);
+		},
+
+		convertStatus: function(status) {
+			if (status === true || status.toString().toLowerCase() === 'on') {
+				return [true, 'on'];
+			} else {
+				return [false, 'off'];
+			}
 		},
 
 		capitalize: function(string) {

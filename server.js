@@ -2,7 +2,7 @@ var express 	= require('express');
 var bodyParser 	= require('body-parser');
 var jade 		= require('jade');
 var http		= require('http');
-var port 		= process.env.PORT || 1337;
+var port 		= process.env.PORT || 7337;
 var app			= express();
 var server		= http.createServer(app);
 var io			= require('socket.io').listen(server);
@@ -16,8 +16,7 @@ app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('connection', function(socket) {
 	socket.on('toogle', function(data) {
-		var status = toggleStatus(data.status);
-		setDevice(data.id, status);
+		setDevice(data.id, data.status);
 		listDevices(function(devices) {
 			io.sockets.emit('list', {devices: devices});
 		});
@@ -49,21 +48,13 @@ app.route('/list')
 		});
 	});
 
-console.log('Starts to listen on port ' + port);
+//console.log('Starts to listen on port ' + port);
 
 var timer = setInterval(function() {
 	listDevices(function(devices) {
 		io.sockets.emit('list', {devices: devices});
 	});
-}, 20000);
-
-function toggleStatus(status) {
-	if (status === 'on') {
-		return 'off';
-	} else {
-		return 'on';
-	}
-}
+}, 60000);
 
 function setDevice(id, status) {
 	exec('tdtool --' + status + ' ' + parseInt(id), function(error, stdout, stderr) {});

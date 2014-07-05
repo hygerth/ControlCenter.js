@@ -1,14 +1,12 @@
 body {
-	font-family:  Helvetica, Arial, sans-serif;
-	color: rgb(30,38,51); /* Dark blue */
-	color: rgba(30,38,51,1);
-	font-size: 80%;
-	font-weight: normal;
-	background: #fdfdfd;
-	max-width: 400px;
-	width: 90%;
-	margin: 0 auto;
-	padding: 5px;
+	color: rgb(0,0,0);
+	color: rgba(0,0,0,.8);
+	cursor: default;
+	font: 18px 'Helvetica Neue';
+	font-weight: 200;
+	height: 100%;
+	width: 100%;
+	-webkit-user-select: none;
 }
 
 
@@ -22,93 +20,165 @@ a:link, a:visited {
 	-webkit-transition: color .2s linear;
 }
 
+#container {
+	height: 100%;
+	margin: 0 auto;
+	max-width: 480px;
+}
+
+.bar {
+	background: rgb(255, 255, 255);
+	background: rgba(255, 255, 255, .9);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	color: rgb(0, 0, 0);
+	color: rgba(0, 0, 0, .5);
+	height: 44px;
+	left: 0;
+	line-height: 44px;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	top: 20px;
+	width: 100%;
+	z-index: 3;
+}
 
 h1 {
-	font-size: 3.5em;
-	width: 90%;
-	position: relative;
-	text-align: center;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding:4px;
-	border: 4px solid rgb(30,38,51);
-	outline: 4px solid rgb(82,182,214);
-	box-shadow: 0 0 0 8px rgb(202,0,0),
-				0 0 0 12px rgb(82,182,214),
-				0 0 0 16px rgb(30,38,51);
+	color: rgb(0, 0, 0);
+	color: rgba(0, 0, 0, .5);
+	font-size: 34px;
+	font-weight: 100;
 }
 
 
 ul {
+	height: 100%;
+	list-style: none;
 	width: 100%;
 }
 
-#row {
+.list {
+	height: 100%;
+	margin-top: 64px;
+	margin-bottom: 20px;
+	padding-bottom: 1px;
+	padding-left: 0;
+	padding-top: 1px;
+	position: relative;
+}
+
+.list:last-child {
+	margin-bottom: 0;
+}
+
+.item {
+	background: rgb(255, 255, 255);
+	border: 1px solid rgb(220, 220, 220);
+	color: rgb(68, 68, 68);
 	display: block;
-	height: 5em;
-	margin-bottom: 3em;
+	font-size: 16px;
+	margin: -1px;
+	padding: 15px;
+	padding-right: 99px;
+	pointer-events: none;
+	position: relative;
+	text-overflow: ellipsis;
+	vertical-align: baseline;
+	white-space: nowrap;
+	z-index: 2;
 }
 
-#row li {
-	display: inline;
+label {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.43;
 }
 
-#row li:last-child {
-	float: right;
+.toggle {
+	display: inline-block;
+	margin: -5px;
+	padding: 5px;
+	pointer-events: auto;
 }
 
-#name {
-	font-size: 2.2em;
-	line-height: 2.2em;
+.item .toggle {
+	position: absolute;
+	right: 15px;
+	top: 7.5px;
+	z-index: 3;
 }
 
-.switch {
-	border: none;
-	outline: none;
-	width: 5em;
-	height: 2.5em;
-	background: #fff;
-	font-size: 2em;
-	border: .2em solid;
+input[type='checkbox'] {
+	box-sizing: border-box;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: normal;
+	margin: 0;
+	outline-offset: 0;
+	outline-style: none;
+	outline-width: 0;
+	padding: 0;
+	width: auto;
+}
+
+.toggle input {
+	display: none;
+}
+
+.track {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+.toggle .track {
+	background: rgb(230, 230, 230);
+	border: 2px solid rgb(230, 230, 230);
+	border-radius: 20px;
+	box-sizing: border-box;
+	content: ' ';
+	cursor: pointer;
+	display: inline-block;
+	height: 32px;
+	pointer-events: none;
+	width: 54px;
 	
-	-webkit-border-radius: .8em; 
-	-moz-border-radius: .8em; 
-	border-radius: .8em; 
-	-webkit-background-clip: padding-box; 
-	-moz-background-clip: padding; 
-	background-clip: padding-box;
-	
-    -webkit-transition: all ease 500ms;
-    -moz-transition: all ease 500ms;
-    -o-transition: all ease 500ms;
-    transition: all ease 500ms;
-	
+	-webkit-transition: all ease-in-out .2s;
+	-moz-transition: all ease-in-out .2s;
+	transition: all ease-in-out .2s;
 }
 
-#on {
-	color: rgb(82,182,214); /* Light blue */
-	color: rgba(82,182,214,1);
-	border-color: rgb(82,182,214);
-	border-color: rgb(82,182,214,1);
+.toggle input:checked + .track {
+	background: rgb(0, 230, 90);
+	border-color: rgb(0, 230, 90);
 }
 
-#on:hover {
-	background: rgb(82,182,214);
-	color: rgb(255,255,255);
+.toggle .handle {
+	background: rgb(255, 255, 255);
+	border-radius: 28px;
+	display: block;
+	height: 28px;
+	left: 7px;
+	position: absolute;
+	top: 7px;
+	transition: all ease-in-out .2s;
+	width: 28px;
 }
 
-#off {
-	color: rgb(202,0,0); /* Red */
-	color: rgba(202,0,0, 1);
-	border-color: rgb(202,0,0);
-	border-color: rgb(202,0,0,1);
+.toggle input:checked + .track .handle {
+	-webkit-transform: translate3d(22px, 0, 0);
+	-moz-transform: translate3d(22px, 0, 0);
+	transform: translate3d(22px, 0, 0);
 }
 
-#off:hover {
-	background: rgb(202,0,0);
-	color: rgb(255,255,255);
+.toggle .handle::before {
+	content: ' ';
+	left: -22px;
+	padding: 19px 35px;
+	position: absolute;
+	top: -4px;
 }
-
 
 /* misc. 
 --------------------------------------------- */
@@ -120,7 +190,6 @@ hr, .hide {
 a img {
 	border: none;
 }
-
 
 /* self-clear floats */
 
