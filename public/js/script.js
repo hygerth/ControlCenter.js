@@ -30,7 +30,7 @@
 					items = $('.list').children();
 				}
 				var item = items[i];
-				$(item).find('p').text(device.name);
+				$(item).find('p').text(IO.capitalize(device.name));
 				$(item).find('label').attr('id', device.id);
 				var status = IO.convertStatus(device.status);
 				$(item).find('input').prop('checked', status[0]);
