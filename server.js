@@ -2,7 +2,7 @@ var express 	= require('express');
 var bodyParser 	= require('body-parser');
 var jade 		= require('jade');
 var http		= require('http');
-var port 		= process.env.PORT || 7337;
+var port 		= process.env.PORT || 1337;
 var app			= express();
 var server		= http.createServer(app);
 var io			= require('socket.io').listen(server);
@@ -15,13 +15,12 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('connection', function(socket) {
-	var devices = listDevices();
-	io.sockets.emit('list', {devices: devices});
 	socket.on('toogle', function(data) {
 		var status = toggleStatus(data.status);
 		setDevice(data.id, status);
-		var devices = listDevices();
-		io.sockets.emit('list', {devices: devices});
+		listDevices(function(devices) {
+			io.sockets.emit('list', {devices: devices});
+		});
 	});
 });
 
@@ -30,6 +29,9 @@ server.listen(port);
 app.route('/')
 	.get(function(req, res) {
 		res.render('index.jade');
+		listDevices(function(devices) {
+			io.sockets.emit('list', {devices: devices});
+		});
 	});
 
 app.route('/:id/:status')
@@ -42,16 +44,18 @@ app.route('/:id/:status')
 
 app.route('/list')
 	.get(function(req, res) {
-		var devices = listDevices();
-		res.json({devices: devices});
+		listDevices(function(devices) {
+			res.json({devices: devices});
+		});
 	});
 
-//console.log('Starts to listen on port ' + port);
+console.log('Starts to listen on port ' + port);
 
 var timer = setInterval(function() {
-	var devices = listDevices();
-	io.sockets.emit('list', {devices: devices});
-}, 60000);
+	listDevices(function(devices) {
+		io.sockets.emit('list', {devices: devices});
+	});
+}, 20000);
 
 function toggleStatus(status) {
 	if (status === 'on') {
@@ -65,7 +69,7 @@ function setDevice(id, status) {
 	exec('tdtool --' + status + ' ' + parseInt(id), function(error, stdout, stderr) {});
 }
 
-function listDevices() {
+function listDevices(onComplete) {
 	exec('tdtool --list', function(error, stdout, stderr) {
 		var list = [];
 		var devicesString = stdout.replace('\r', '').split('\n');
@@ -79,6 +83,6 @@ function listDevices() {
 				list.push(params);
 			}
 		}
-		return list;
+		onComplete(list);
 	});
 }
