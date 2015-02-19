@@ -1,66 +1,66 @@
 {
-  "name": "controlcenter",
-  "private": true,
-  "author": "https://github.com/hygerth/",
-  "version": "1.0.0",
-  "dependencies": {
-    "express": "latest",
-	"body-parser": "~1.0.0",
-    "jade": "latest",
-    "socket.io": "latest"
-  },
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-githooks": "^0.3.1",
-    "grunt-jscs-checker": "^0.6.0",
-    "jscs": "^1.5.6",
-    "jshint": "^2.5.1",
-    "jshint-stylish": "^0.2.0"
-  },
-  "jscsConfig": {
-    "requireSpaceAfterKeywords": [
-      "if",
-      "else",
-      "for",
-      "while",
-      "do",
-      "switch",
-      "return",
-      "try",
-      "catch"
-    ],
-    "requireSpaceBeforeBlockStatements": true,
-    "requireParenthesesAroundIIFE": true,
-    "requireSpacesInFunctionExpression": {
-      "beforeOpeningCurlyBrace": true
+    "name": "controlcenter",
+    "private": true,
+    "author": "https://github.com/hygerth/",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "latest",
+        "body-parser": "~1.0.0",
+        "jade": "latest",
+        "socket.io": "latest"
     },
-    "disallowMultipleVarDecl": true,
-    "disallowEmptyBlocks": true,
-    "disallowSpacesInsideArrayBrackets": true,
-    "disallowSpacesInsideParentheses": true,
-    "disallowQuotedKeysInObjects": true,
-    "disallowDanglingUnderscores": true,
-    "disallowSpaceAfterObjectKeys": true,
-    "requireCommaBeforeLineBreak": true,
-    "disallowImplicitTypeConversion": [
-      "numeric",
-      "boolean",
-      "binary",
-      "string"
-    ],
-    "disallowMultipleLineStrings": true,
-    "disallowMultipleLineBreaks": true,
-    "validateLineBreaks": "LF",
-    "disallowTrailingWhitespace": true,
-    "disallowTrailingComma": true,
-    "disallowKeywordsOnNewLine": [
-      "else"
-    ],
-    "requireLineFeedAtFileEnd": true,
-    "disallowYodaConditions": true,
-    "excludeFiles": [
-      "node_modules/**"
-    ]
-  }
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-githooks": "^0.3.1",
+        "grunt-jscs": "^0.6.0",
+        "jscs": "^1.5.6",
+        "jshint": "^2.5.1",
+        "jshint-stylish": "^0.2.0"
+    },
+    "jscsConfig": {
+        "requireSpaceAfterKeywords": [
+            "if",
+            "else",
+            "for",
+            "while",
+            "do",
+            "switch",
+            "return",
+            "try",
+            "catch"
+        ],
+        "requireSpaceBeforeBlockStatements": true,
+        "requireParenthesesAroundIIFE": true,
+        "requireSpacesInFunctionExpression": {
+            "beforeOpeningCurlyBrace": true
+        },
+        "disallowMultipleVarDecl": true,
+        "disallowEmptyBlocks": true,
+        "disallowSpacesInsideArrayBrackets": true,
+        "disallowSpacesInsideParentheses": true,
+        "disallowQuotedKeysInObjects": true,
+        "disallowDanglingUnderscores": true,
+        "disallowSpaceAfterObjectKeys": true,
+        "requireCommaBeforeLineBreak": true,
+        "disallowImplicitTypeConversion": [
+            "numeric",
+            "boolean",
+            "binary",
+            "string"
+        ],
+        "disallowMultipleLineStrings": true,
+        "disallowMultipleLineBreaks": true,
+        "validateLineBreaks": "LF",
+        "disallowTrailingWhitespace": true,
+        "disallowTrailingComma": true,
+        "disallowKeywordsOnNewLine": [
+            "else"
+        ],
+        "requireLineFeedAtFileEnd": true,
+        "disallowYodaConditions": true,
+        "excludeFiles": [
+            "node_modules/**"
+        ]
+    }
 }

@@ -1,33 +1,31 @@
 module.exports = function(grunt) {
 
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
-		githooks: {
-			all: {
-				'pre-commit': 'test'
-			}
-		},
+        githooks: {
+            all: {
+                'pre-commit': 'test'
+            }
+        },
 
-		jshint: {
-			src: ['*.js', 'public/js/*.js'],
-			options: {
-				curly: true,
-				eqeqeq: true,
-				sub: true,
-				reporter: require('jshint-stylish')
-			}
-		},
+        jshint: {
+            src: ['*.js', 'public/js/*.js'],
+            options: {
+                curly: true,
+                eqeqeq: true,
+                sub: true,
+                reporter: require('jshint-stylish')
+            }
+        },
 
-		jscs: {
-			src: ['*.js', 'public/js/*.js']
-		}
-	});
+        jscs: {
+            src: ['*.js', 'public/js/*.js']
+        }
+    });
 
-	grunt.loadNpmTasks('grunt-githooks');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-jscs-checker');
-
-	grunt.registerTask('test', ['jshint', 'jscs']);
-
+    grunt.loadNpmTasks('grunt-githooks');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jscs-checker');
+    grunt.registerTask('test', ['jshint', 'jscs']);
 };

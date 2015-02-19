@@ -1,202 +1,202 @@
 body {
-	color: rgb(0,0,0);
-	color: rgba(0,0,0,.8);
-	cursor: default;
-	font: 18px 'Helvetica Neue';
-	font-weight: 200;
-	height: 100%;
-	width: 100%;
-	-webkit-user-select: none;
+    color: rgb(0,0,0);
+    color: rgba(0,0,0,.8);
+    cursor: default;
+    font: 18px 'Helvetica Neue';
+    font-weight: 200;
+    height: 100%;
+    width: 100%;
+    -webkit-user-select: none;
 }
 
 
 /* links */
 
 a:link, a:visited {
-	text-decoration: none;
-	font-weight: bold;
-	outline: none;
-	color: ;
-	-webkit-transition: color .2s linear;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+    color: ;
+    -webkit-transition: color .2s linear;
 }
 
 #container {
-	height: 100%;
-	margin: 0 auto;
-	max-width: 480px;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 480px;
 }
 
 .bar {
-	background: rgb(255, 255, 255);
-	background: rgba(255, 255, 255, .9);
-	border-bottom: 1px solid rgb(0, 0, 0);
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
-	color: rgb(0, 0, 0);
-	color: rgba(0, 0, 0, .5);
-	height: 44px;
-	left: 0;
-	line-height: 44px;
-	padding: 0;
-	position: absolute;
-	text-align: center;
-	top: 20px;
-	width: 100%;
-	z-index: 3;
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, .9);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, .5);
+    height: 44px;
+    left: 0;
+    line-height: 44px;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    width: 100%;
+    z-index: 3;
 }
 
 h1 {
-	color: rgb(0, 0, 0);
-	color: rgba(0, 0, 0, .5);
-	font-size: 34px;
-	font-weight: 100;
+    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, .5);
+    font-size: 34px;
+    font-weight: 100;
 }
 
 
 ul {
-	height: 100%;
-	list-style: none;
-	width: 100%;
+    height: 100%;
+    list-style: none;
+    width: 100%;
 }
 
 .list {
-	height: 100%;
-	margin-top: 64px;
-	margin-bottom: 20px;
-	padding-bottom: 1px;
-	padding-left: 0;
-	padding-top: 1px;
-	position: relative;
+    height: 100%;
+    margin-top: 64px;
+    margin-bottom: 20px;
+    padding-bottom: 1px;
+    padding-left: 0;
+    padding-top: 1px;
+    position: relative;
 }
 
 .list:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .item {
-	background: rgb(255, 255, 255);
-	border: 1px solid rgb(220, 220, 220);
-	color: rgb(68, 68, 68);
-	display: block;
-	font-size: 16px;
-	margin: -1px;
-	padding: 15px;
-	padding-right: 99px;
-	pointer-events: none;
-	position: relative;
-	text-overflow: ellipsis;
-	vertical-align: baseline;
-	white-space: nowrap;
-	z-index: 2;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(220, 220, 220);
+    color: rgb(68, 68, 68);
+    display: block;
+    font-size: 16px;
+    margin: -1px;
+    padding: 15px;
+    padding-right: 99px;
+    pointer-events: none;
+    position: relative;
+    text-overflow: ellipsis;
+    vertical-align: baseline;
+    white-space: nowrap;
+    z-index: 2;
 }
 
 label {
-	font-size: 14px;
-	font-weight: normal;
-	line-height: 1.43;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.43;
 }
 
 .toggle {
-	display: inline-block;
-	margin: -5px;
-	padding: 5px;
-	pointer-events: auto;
+    display: inline-block;
+    margin: -5px;
+    padding: 5px;
+    pointer-events: auto;
 }
 
 .item .toggle {
-	position: absolute;
-	right: 15px;
-	top: 7.5px;
-	z-index: 3;
+    position: absolute;
+    right: 15px;
+    top: 7.5px;
+    z-index: 3;
 }
 
 input[type='checkbox'] {
-	box-sizing: border-box;
-	font-size: 14px;
-	font-weight: normal;
-	line-height: normal;
-	margin: 0;
-	outline-offset: 0;
-	outline-style: none;
-	outline-width: 0;
-	padding: 0;
-	width: auto;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0;
+    outline-offset: 0;
+    outline-style: none;
+    outline-width: 0;
+    padding: 0;
+    width: auto;
 }
 
 .toggle input {
-	display: none;
+    display: none;
 }
 
 .track {
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 
 .toggle .track {
-	background: rgb(230, 230, 230);
-	border: 2px solid rgb(230, 230, 230);
-	border-radius: 20px;
-	box-sizing: border-box;
-	content: ' ';
-	cursor: pointer;
-	display: inline-block;
-	height: 32px;
-	pointer-events: none;
-	width: 54px;
-	
-	-webkit-transition: all ease-in-out .2s;
-	-moz-transition: all ease-in-out .2s;
-	transition: all ease-in-out .2s;
+    background: rgb(230, 230, 230);
+    border: 2px solid rgb(230, 230, 230);
+    border-radius: 20px;
+    box-sizing: border-box;
+    content: ' ';
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    pointer-events: none;
+    width: 54px;
+
+    -webkit-transition: all ease-in-out .2s;
+    -moz-transition: all ease-in-out .2s;
+    transition: all ease-in-out .2s;
 }
 
 .toggle input:checked + .track {
-	background: rgb(0, 230, 90);
-	border-color: rgb(0, 230, 90);
+    background: rgb(0, 230, 90);
+    border-color: rgb(0, 230, 90);
 }
 
 .toggle .handle {
-	background: rgb(255, 255, 255);
-	border-radius: 28px;
-	display: block;
-	height: 28px;
-	left: 7px;
-	position: absolute;
-	top: 7px;
-	transition: all ease-in-out .2s;
-	width: 28px;
+    background: rgb(255, 255, 255);
+    border-radius: 28px;
+    display: block;
+    height: 28px;
+    left: 7px;
+    position: absolute;
+    top: 7px;
+    transition: all ease-in-out .2s;
+    width: 28px;
 }
 
 .toggle input:checked + .track .handle {
-	-webkit-transform: translate3d(22px, 0, 0);
-	-moz-transform: translate3d(22px, 0, 0);
-	transform: translate3d(22px, 0, 0);
+    -webkit-transform: translate3d(22px, 0, 0);
+    -moz-transform: translate3d(22px, 0, 0);
+    transform: translate3d(22px, 0, 0);
 }
 
 .toggle .handle::before {
-	content: ' ';
-	left: -22px;
-	padding: 19px 35px;
-	position: absolute;
-	top: -4px;
+    content: ' ';
+    left: -22px;
+    padding: 19px 35px;
+    position: absolute;
+    top: -4px;
 }
 
-/* misc. 
+/* misc.
 --------------------------------------------- */
 
-hr, .hide {
-	display: none;
-}
+    hr, .hide {
+        display: none;
+    }
 
-a img {
-	border: none;
-}
+    a img {
+        border: none;
+    }
 
-/* self-clear floats */
+    /* self-clear floats */
 
-.group:after {
-	content: "."; 
-	display: block; 
-	height: 0; 
-	clear: both; 
-	visibility: hidden;
-}
+    .group:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
