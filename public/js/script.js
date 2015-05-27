@@ -13,7 +13,7 @@
         },
 
         connectElements: function() {
-            $(document).on('click', 'input', IO.sendToogle);
+            $(document).on('click', 'input', IO.sendToggle);
         },
 
         listAllDevices: function(data) {
@@ -36,14 +36,14 @@
             }
         },
 
-        sendToogle: function() {
+        sendToggle: function() {
             var id = $(this).parent().attr('id');
             var status = IO.convertStatus(this.checked);
             var data = {
                 id: id,
                 status: status[1]
             };
-            IO.socket.emit('toogle', data);
+            IO.socket.emit('toggle', data);
         },
 
         convertStatus: function(status) {

@@ -17,7 +17,7 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('connection', function(socket) {
-    socket.on('toogle', function(data) {
+    socket.on('toggle', function(data) {
         setDevice(data.id, data.status);
         listDevices(function(devices) {
             io.sockets.emit('list', {devices: devices});
